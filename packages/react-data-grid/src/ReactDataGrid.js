@@ -313,7 +313,7 @@ const ReactDataGrid = React.createClass({
     // if(commit.changed && commit.changed.expandedHeight){
     //   expandedRows = this.expandRow(commit.rowIdx, commit.changed.expandedHeight);
     // }
-    this.setState({selected: selected, expandedRows: expandedRows});
+    this.setState({ selected: { rowIdx: selected.rowIdx + 1, idx: selected.idx }, expandedRows: expandedRows });
 
     if (this.props.onRowUpdated) {
       this.props.onRowUpdated(commit);
